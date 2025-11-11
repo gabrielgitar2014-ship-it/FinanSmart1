@@ -64,7 +64,7 @@ const Register = () => {
           transition={{ duration: 0.5 }}
           className="w-full max-w-md"
         >
-          <div className="bg-slate-900/50 backdrop-blur-lg rounded-2xl shadow-2xl border border-slate-800 p-8">
+          <div className="bg-slate-900/50 bg-white backdrop-blur-lg rounded-2xl shadow-2xl border border-slate-800 p-8">
             <motion.div
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
@@ -152,5 +152,6 @@ const Register = () => {
     </>
   );
 };
+
 
 export default Register;
