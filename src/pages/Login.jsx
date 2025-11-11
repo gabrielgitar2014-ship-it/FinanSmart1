@@ -46,14 +46,14 @@ const Login = () => {
         <meta name="description" content="Faça login no seu gerenciador financeiro pessoal" />
       </Helmet>
 
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 px-4">
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-white-900 to-slate-900 px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           className="w-full max-w-md"
         >
-          <div className="bg-slate-900/50 backdrop-blur-lg rounded-2xl shadow-2xl border border-slate-800 p-8">
+          <div className="bg-slate-900/50 backdrop-white-lg rounded-2xl shadow-2xl border border-slate-800 p-8">
             <motion.div
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
@@ -133,5 +133,6 @@ const Login = () => {
     </>
   );
 };
+
 
 export default Login;
