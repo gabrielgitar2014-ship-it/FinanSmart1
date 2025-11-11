@@ -1,12 +1,15 @@
-import { createClient } from '@supabase/supabase-js';
+// src/lib/supabaseClient.js
 
-const supabaseUrl = localStorage.getItem('supabase_url') || '';
-const supabaseAnonKey = localStorage.getItem('supabase_anon_key') || '';
+import { createClient } from '@supabase/supabase-js'
 
-export const supabase = supabaseUrl && supabaseAnonKey 
-  ? createClient(supabaseUrl, supabaseAnonKey)
-  : null;
+// 1. Pega as variáveis do .env (injetadas pelo Vite)
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL
+const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY
 
-export const isSupabaseConfigured = () => {
-  return !!(supabaseUrl && supabaseAnonKey);
-};
+// 2. Validação (opcional, mas recomendado)
+if (!supabaseUrl || !supabaseAnonKey) {
+  throw new Error("Erro: VITE_SUPABASE_URL ou VITE_SUPABASE_ANON_KEY não estão definidas no arquivo .env");
+}
+
+// 3. Cria e exporta o cliente
+export const supabase = createClient(supabaseUrl, supabaseAnonKey)
