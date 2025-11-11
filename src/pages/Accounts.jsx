@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Plus, CreditCard, Wallet, Banknote, Edit2, Trash2 } from 'lucide-react';
 import { Helmet } from 'react-helmet';
-import { Button } from '../components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
+import { Button } from '../components/ui/Button';
+import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/Card';
 import { useAccounts } from '../hooks/useAccounts';
-import { useToast } from '../components/ui/use-toast';
+import { useToast } from '../components/ui/use-Toast';
 import AddAccountModal from '../components/AddAccountModal';
 
 const Accounts = () => {

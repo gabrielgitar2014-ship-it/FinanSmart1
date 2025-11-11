@@ -4,9 +4,9 @@ import { motion } from 'framer-motion';
 import { Mail, ArrowLeft } from 'lucide-react';
 import { Helmet } from 'react-helmet';
 import { useAuth } from '../contexts/AuthContext';
-import { Button } from '../components/ui/button';
-import { Input } from '../components/ui/input';
-import { useToast } from '../components/ui/use-toast';
+import { Button } from '../components/ui/Button';
+import { Input } from '../components/ui/Input';
+import { useToast } from '../components/ui/use-Toast';
 
 const RecoverPassword = () => {
   const [email, setEmail] = useState('');

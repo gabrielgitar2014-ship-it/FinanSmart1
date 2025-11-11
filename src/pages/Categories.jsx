@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Plus, Tag, Edit2, Trash2 } from 'lucide-react';
 import { Helmet } from 'react-helmet';
-import { Button } from '../components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
+import { Button } from '../components/ui/Button';
+import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/Card';
 import { useCategories } from '../hooks/useCategories';
-import { useToast } from '../components/ui/use-toast';
+import { useToast } from '../components/ui/use-Toast';
 import AddCategoryModal from '../components/AddCategoryModal';
 
 const Categories = () => {

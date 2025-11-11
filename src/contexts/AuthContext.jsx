@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import { supabase, isSupabaseConfigured } from '../lib/supabase';
+import { supabase, isSupabaseConfigured } from '../lib/supabaseClient';
 
 const AuthContext = createContext({});
 
@@ -16,7 +16,8 @@ export const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (!isSupabaseConfigured()) {
+    // Esta parte já estava correta
+    if (!isSupabaseConfigured) {
       const mockUser = localStorage.getItem('mock_user');
       if (mockUser) {
         setUser(JSON.parse(mockUser));
@@ -38,7 +39,8 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   const signUp = async (email, password) => {
-    if (!isSupabaseConfigured()) {
+    // Correção: removido () de isSupabaseConfigured
+    if (!isSupabaseConfigured) {
       const mockUser = { id: Date.now().toString(), email };
       localStorage.setItem('mock_user', JSON.stringify(mockUser));
       setUser(mockUser);
@@ -48,7 +50,8 @@ export const AuthProvider = ({ children }) => {
   };
 
   const signIn = async (email, password) => {
-    if (!isSupabaseConfigured()) {
+    // Correção: removido () de isSupabaseConfigured
+    if (!isSupabaseConfigured) {
       const mockUser = { id: Date.now().toString(), email };
       localStorage.setItem('mock_user', JSON.stringify(mockUser));
       setUser(mockUser);
@@ -58,7 +61,8 @@ export const AuthProvider = ({ children }) => {
   };
 
   const signOut = async () => {
-    if (!isSupabaseConfigured()) {
+    // Correção: removido () de isSupabaseConfigured
+    if (!isSupabaseConfigured) {
       localStorage.removeItem('mock_user');
       setUser(null);
       return { error: null };
@@ -67,7 +71,8 @@ export const AuthProvider = ({ children }) => {
   };
 
   const resetPassword = async (email) => {
-    if (!isSupabaseConfigured()) {
+    // Correção: removido () de isSupabaseConfigured
+    if (!isSupabaseConfigured) {
       return { data: {}, error: null };
     }
     return await supabase.auth.resetPasswordForEmail(email);

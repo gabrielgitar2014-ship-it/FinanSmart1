@@ -3,7 +3,7 @@ import { Outlet, Link, useLocation, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { LayoutDashboard, CreditCard, Tag, LogOut, Menu, X } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
-import { Button } from '../components/ui/button';
+import { Button } from '../components/ui/Button';
 import { useState } from 'react';
 
 const Layout = () => {
